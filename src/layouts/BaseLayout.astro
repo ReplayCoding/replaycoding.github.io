@@ -1,0 +1,33 @@
+---
+import Navigation from "../components/Navigation.astro";
+import "@fontsource-variable/noto-sans-mono";
+
+let { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+			body {
+				font-family: "Noto Sans Mono", monospace;
+				font-size: 14px;
+			}
+
+			.wrapper {
+				max-width: 80ch;
+				overflow-wrap: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<Navigation />
+			<slot />
+		</div>
+	</body>
+</html>
