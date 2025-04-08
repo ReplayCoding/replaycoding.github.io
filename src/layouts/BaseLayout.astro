@@ -1,6 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
-import "@fontsource-variable/noto-sans-mono";
+import "@fontsource-variable/noto-sans";
 
 let { title } = Astro.props;
 ---
@@ -14,13 +14,16 @@ let { title } = Astro.props;
 		<title>{title}</title>
 		<style>
 			body {
-				font-family: "Noto Sans Mono", monospace;
-				font-size: 14px;
+				/* Try to use the system version of Noto Sans before downloading
+				 * the font... I think? Please pretend I know what I'm doing. */
+				font-family: "Noto Sans", "Noto Sans Variable", sans-serif;
+				font-size: 13.5px;
 			}
 
 			.wrapper {
-				max-width: 80ch;
+				max-width: 100ch;
 				overflow-wrap: break-word;
+				overflow: hidden;
 			}
 		</style>
 	</head>

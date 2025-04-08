@@ -3,6 +3,21 @@ import BaseLayout from "./BaseLayout.astro";
 const frontmatter = Astro.props.frontmatter;
 ---
 <BaseLayout title={frontmatter.title}>
+    <style is:global>
+        /* FIXME: is there a better way to only influence child elements. do i
+         * want to only influence child elements? maybe this should be a global
+         * style in BaseLayout instead. */
+        .astro-code {
+            margin-left: 1ch;
+            max-height: 20lh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
     <h1>{frontmatter.title}</h1>
     <slot />
 </BaseLayout>

@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/noto-sans-mono": "^5.2.6",
+    "@fontsource-variable/noto-sans": "^5.2.6",
     "astro": "^5.6.1"
   }
 }
