@@ -7,7 +7,7 @@ layout: '/src/layouts/MarkdownBlogPost.astro'
 ## Tracing _getSignature_
 After getting the APK and expansion data onto my computer for static analysis, I wanted to be able to perform dynamic analysis as well. [Frida](https://frida.re/) is a tool for this that I've used before, so that's what I used. Because I don't have a rooted device, I had to use Frida's "gadget" library which requires modifying the target application to load it. But after rebuilding and installing the modified application, I got a different "Signature Error" dialog.
 
-Now that I had Frida running, I could trace what the application is doing internally. By use frida-trace to trace the Java methods that got called, I noticed that there were some interesting calls to a method named `getSignature`, followed by a call to `showSignatureConfirmDialog`:
+Now that I had Frida running, I could trace what the application is doing internally. By using frida-trace to trace the Java methods that got called, I noticed that there were some interesting calls to a method named `getSignature`, followed by a call to `showSignatureConfirmDialog`:
 ```java
 1171 ms  MTFPActivity.getSignature()
 1173 ms  <= "3082035b30820243a00302..."
